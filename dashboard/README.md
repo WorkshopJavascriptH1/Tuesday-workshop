@@ -9,6 +9,9 @@ Les fonctionnalités:
 * Prévisualisation des oeuvres
 
 
+#### Pour les graphs utilisez CHART.js
+http://chartjs.org
+
 ### DOCUMENTATION API
 
 Coming soon...
