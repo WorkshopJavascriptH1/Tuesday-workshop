@@ -10,6 +10,7 @@ $(function () {
                 $('#userInfos').html("<h4>"+ response.message +"</h4>");
                 return false;
             }
+            
             var date = new Date();
             var day = date.getDate();
             var month = date.getMonth() + 1;
