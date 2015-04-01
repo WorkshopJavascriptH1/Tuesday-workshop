@@ -10,19 +10,29 @@ $(function () {
             var users = response.result;
 
             for (user in users) {
-                $('#usersContainer').append('<img style="margin-right: 20px;" align="left" width="100" src="https://fubiz.surfacecc.com/media/creations/'+ users[user].oeuvre_id +'.jpg">');
-                $('#usersContainer').append('<h3>'+ users[user].username +'</h3>');
-                $('#usersContainer').append(users[user].votes +' votes<br>');
-                $('#usersContainer').append(users[user].facebook +' partages facebook<br>');
-                $('#usersContainer').append(users[user].twitter +' partages twitter');
-                $('#usersContainer').append('<div style="clear: both"></div>');
+                var element = $('<div id="'+ users[user].username +'">');
+                var statsElement = $('<div class="stats">');
+
+                // INFORMATIONS
+                statsElement.append(users[user].votes +' votes<br>');
+                statsElement.append(users[user].facebook +' partages facebook<br>');
+                statsElement.append(users[user].twitter +' partages twitter');
+        
+                // BASE
+                element.append('<img style="margin-right: 20px;" align="left" width="100" src="https://fubiz.surfacecc.com/media/creations/'+ users[user].oeuvre_id +'.jpg">');
+                element.append('<h3>'+ users[user].username +'</h3>');
+                element.append(statsElement);
+                element.append('<div style="clear: both"></div>');
+
+                $('#usersContainer').append(element);
             }
         });
     });
 
 
     $('#usersContainer').on('click', 'h3', function () {
+        var parentElement = $(this).parent();
         
-        var username = $(this).html();
+        parentElement.children('.stats').slideToggle();
     });
 });
