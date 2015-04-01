@@ -14,4 +14,4 @@ http://chartjs.org
 
 ### DOCUMENTATION API
 
-Coming soon...
+[Lien vers la documentation](https://github.com/RomainJeff/fubbiz-dashboard/wiki)
